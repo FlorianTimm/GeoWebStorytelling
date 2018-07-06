@@ -1,263 +1,384 @@
 <!doctype html>
 <html lang="de">
-   <head>
-      <link rel="stylesheet" href="./ol500/ol.css" type="text/css">
-      <style>
-         #map{
+
+<head>
+    <link rel="stylesheet" href="./ol500/ol.css" type="text/css">
+    <style>
+        #map {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -100;
-         } 
-         content{
+        }
+
+        content {
             display: block;
             padding-left: 50px;
-         }
-         content div {
-            margin-bottom: 150px;;
+        }
+
+        content div {
+            margin-bottom: 100px;
+            ;
             height: 200px;
             width: 300px;
-            background-color: rgba(50,50,50,0.5);
+            background-color: rgba(50, 50, 50, 0.5);
             /*transform: rotate(10deg);*/
             color: white;
             padding: 10px;
-         }
-            content:first-child {
-            margin-top: 50px;
-         }
-      </style>
-      <script src="./ol500/ol.js" type="text/javascript"></script>
-      <title>OpenLayers example</title>
-   </head>
-   <body>
-      <content>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.1</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.2</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.3</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.4</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.5</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.6</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.7</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.8</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.9</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.10</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.11</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.12</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.13</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.14</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.15</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.16</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.17</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.18</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.19</div>
-         <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.20</div>
-      </content>
-      <div id="map" class="map"></div>
-      <script type="text/javascript">
-         var osm = new ol.layer.Tile({
-                 source: new ol.source.OSM()
-         
-               });
-               
-               
-                var bing = new ol.layer.Tile({
-             source: new ol.source.BingMaps({
-               imagerySet: 'Aerial',
-               key: 'AkSukkXMAgxJyAAwb0cW7mU6jHGLF6lpWlLEkomC785njj6PnMMXApTIgJscafjW'
-             })
-           });
-           
-           
-           var styles = {
-         'Point': new ol.style.Style({
-             image: new ol.style.Circle({
-                 radius: 4,
-                 fill: new ol.style.Fill({
-                     color: 'rgba(180,0,0,0.9)'
-                 }),
-                 stroke: new ol.style.Stroke({
-                     color: 'rgba(255,255,255,0.9)',
-                     width: 2
-                 })
-             })
-         }),
-         'LineString': new ol.style.Style({
-             stroke: new ol.style.Stroke({
-                 color: '#f00',
-                 width: 3
-             })
-         }),
-         'MultiLineString': new ol.style.Style({
-             stroke: new ol.style.Stroke({
-                 color: '#922',
-                 width: 2
-             })
-         })
-         };
-         
-         var styleFunction = function(feature) {
-         return styles[feature.getGeometry().getType()];
-         };
-         
-         /*var vectorSource = new ol.source.Vector({
-                 url: "track.gpx",
-                 format: new ol.format.GPX()
-             });
-         */
-         var vectorSource = new ol.source.Vector();
-           var gpx = new ol.layer.Vector({
-             source: vectorSource,
-             style: styleFunction
-         });
-         
-         
-         
-         var pic = new ol.layer.Vector({
-             source: new ol.source.Vector({
-                 url: 'bilder.json',
-                 projection: 'EPSG:4326',
-                 format: new ol.format.GeoJSON()
-             }),
-             style: styleFunction
-         });
-         
-           var map = new ol.Map({
-             target: 'map',
-             layers: [osm, gpx, pic],
-             controls: [new ol.control.Attribution()],
-             interactions: [],
-             view: new ol.View({
-               center: ol.proj.fromLonLat([37.41, 8.82]),
-               zoom: 4
-             })
-           });
-           
-           
-         var geladen = function(e) {
+        }
+
+        content div img {
+            max-height: 180px;
+            max-width: 280px;
+        }
+    </style>
+    <script src="./ol500/ol.js" type="text/javascript"></script>
+    <title>OpenLayers example</title>
+</head>
+
+<body>
+    <canvas id="canvas">ss</canvas>
+    <content id="content">
+        <div class="kachel" data-time="2018-03-27 15:37:22"><img src="https://farm1.staticflickr.com/790/39479988500_bc4ee2d4a3_n.jpg"></div>
+        <div class="kachel" data-time="2018-03-27 16:15:52"><img src="https://c1.staticflickr.com/1/901/39479989480_0f76284d15_m.jpg"></div>
+        <div class="kachel" data-time="2018-03-27 14:15:52">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.2</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.3</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.4</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.5</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.6</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.7</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.8</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.9</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.10</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.11</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.12</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.13</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.14</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.15</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.16</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.17</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.18</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.19</div>
+        <div class="kachel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.20</div>
+    </content>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+        var osm = new ol.layer.Tile({
+            source: new ol.source.OSM()
+
+        });
+
+
+        var bing = new ol.layer.Tile({
+            source: new ol.source.BingMaps({
+                imagerySet: 'Aerial',
+                key: 'AkSukkXMAgxJyAAwb0cW7mU6jHGLF6lpWlLEkomC785njj6PnMMXApTIgJscafjW'
+            })
+        });
+
+
+        var styles = {
+            'Point': new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 4,
+                    fill: new ol.style.Fill({
+                        color: 'rgba(180,0,0,0.9)'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: 'rgba(255,255,255,0.9)',
+                        width: 2
+                    })
+                })
+            }),
+            'LineString': new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: '#f00',
+                    width: 3
+                })
+            }),
+            'MultiLineString': new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: '#922',
+                    width: 2
+                })
+            })
+        };
+
+        var styleFunction = function(feature) {
+            return styles[feature.getGeometry().getType()];
+        };
+
+        /*var vectorSource = new ol.source.Vector({
+                url: "track.gpx",
+                format: new ol.format.GPX()
+            });
+        */
+        var vectorSource = new ol.source.Vector();
+        var gpx = new ol.layer.Vector({
+            source: vectorSource,
+            style: styleFunction
+        });
+
+
+        var pic = new ol.layer.Vector({
+            source: new ol.source.Vector({
+                url: 'bilder.json',
+                projection: 'EPSG:4326',
+                format: new ol.format.GeoJSON()
+            }),
+            style: styleFunction
+        });
+        var view = new ol.View({
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+        });
+        var map = new ol.Map({
+            target: 'map',
+            layers: [osm, gpx, pic],
+            controls: [new ol.control.Attribution()],
+            interactions: [],
+            view: view
+        });
+
+        var center = null;
+        var geladen = function(e) {
             if (gpx.getSource().getState() == 'ready') {
-                map.getView().fit(gpx.getSource().getExtent(), {padding: [0,0,0,300]});
+                var extent = gpx.getSource().getExtent();
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 350]
+                });
+                center = map.getPixelFromCoordinate(ol.extent.getCenter(extent));
+                console.log(center);
                 ol.Observable.unByKey(gpxListener);
             }
-         }
-         
-         var gpxListener = gpx.getSource().on('change', geladen);
-         map.on('resize', geladen);
-         
-           
-        function wheelRotation (e) { 
+        }
+
+        var gpxListener = gpx.getSource().on('change', geladen);
+        map.on('resize', geladen);
+
+
+        window.scrollTo(0, 0);
+        var pos_alt = 0;
+        var zoom1 = false;
+        var zoom2 = false;
+        var zoom3 = false;
+
+        function wheelRotation(e) {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight) - window.innerHeight; 
-            var faktor = (scrollTop/limit);
-            //console.log(faktor);
-            makeIcon(calcCoord(minTime + diffTime * faktor))
-            
-         return false;
-         }
-         document.addEventListener("wheel", wheelRotation, true);
-         
-         
-         
-         var kacheln = document.getElementsByClassName("kachel");
-         Array.prototype.forEach.call(kacheln, function (item) {
+            var scrollDiff = scrollTop - pos_alt;
+            pos_alt = scrollTop;
+            // var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight) - window.innerHeight; 
+            // var faktor = Math.round((scrollTop/limit)*10)/10;
+
+            //coord = calcCoord(minTime + diffTime * faktor);
+            //makeIcon(coord);
+            /*
+                       if (!zoom1 && scrollDiff > 0 && scrollTop > 60) {
+                           view.animate({zoom: view.getZoom() + 1});
+                           zoom1 = true;
+                       } else if (zoom1 && scrollDiff < 0 && scrollTop < 60) {
+                           view.animate({zoom: view.getZoom() - 1});
+                           zoom1 = false;
+                       } 
+                        if (!zoom2 && scrollDiff > 0 && scrollTop > 120) {
+                           view.animate({zoom: view.getZoom() + 1});
+                           zoom2 = true;
+                       } else if (zoom2 && scrollDiff < 0 && scrollTop < 120) {
+                           view.animate({zoom: view.getZoom() - 1});
+                           zoom2 = false;
+                       } 
+                          if (!zoom3 && scrollDiff > 0 && scrollTop > 180) {
+                           view.animate({zoom: view.getZoom() + 1});
+                           zoom3 = true;
+                       } else if (zoom3 && scrollDiff < 0 && scrollTop < 180) {
+                           view.animate({zoom: view.getZoom() - 1});
+                           zoom3 = false;
+                       } 
+                       */
+
+
+
+            var kacheln = document.getElementsByClassName("kachel");
+            var first = true;
+            Array.prototype.forEach.call(kacheln, function(item) {
+                //item.style.transform = "rotate(" + Math.floor((Math.random() * 30) -15) + "deg)";
+                if (first & (getOffset(item).top - scrollTop) > -30) {
+                    first = false;
+                    //item.style.backgroundColor = "rgba(200,50,50,0.5)"; 
+                    //console.log(item.dataset.time);
+                    var pixel1 = [getOffset(item).left + 320, getOffset(item).top - scrollTop + 60];
+                    var pixel2 = [getOffset(item).left + 320, getOffset(item).top - scrollTop + 90];
+                    var coord = calcCoord(Date.parse(item.dataset.time));
+                    makeIcon(coord);
+                    if (coord!= null && center != null) {
+                        //view.setCenter(coord);
+                        view.animate({zoom: 13}, {center: coord});
+                        // var pixel2 = map.getPixelFromCoordinate(coord);
+
+                        var pixel_coord1 = map.getCoordinateFromPixel(pixel1);
+                        var pixel_coord2 = map.getCoordinateFromPixel(pixel2);
+                        makeLine([
+                            [pixel_coord1, coord, pixel_coord2, pixel_coord1]
+                        ])
+                    }
+                } else {
+                    item.style.backgroundColor = "rgba(50,50,50,0.5)";
+                }
+            });
+
+            return false;
+        }
+        document.addEventListener("scroll", wheelRotation, true);
+
+
+        
+        map.on("movestart", function (e) {
+            lineLayer.setVisible(false);
+        });
+        
+         map.on("moveend", function (e) {
+            lineLayer.setVisible(true);
+            wheelRotation(e);
+        });
+
+        function getOffset(el) {
+            var _x = 0;
+            var _y = 0;
+            while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+                _x += el.offsetLeft - el.scrollLeft;
+                _y += el.offsetTop - el.scrollTop;
+                el = el.offsetParent;
+            }
+            return {
+                top: _y,
+                left: _x
+            };
+        }
+
+        var kacheln = document.getElementsByClassName("kachel");
+        Array.prototype.forEach.call(kacheln, function(item) {
             //item.style.transform = "rotate(" + Math.floor((Math.random() * 30) -15) + "deg)";
-            
-         });
-         
-         
-         
-         var xhr = new XMLHttpRequest();
-         xhr.open('GET', 'track.gpx', true);
-         
-         // If specified, responseType must be empty string or "document"
-         xhr.responseType = 'document';
-         
-         // overrideMimeType() can be used to force the response to be parsed as XML
-         xhr.overrideMimeType('text/xml');
-         
-         var trackPoints = [];
-         var minTime = 0;
-         var diffTime = 0;
-         xhr.onload = function () {
+
+        });
+
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'track.gpx', true);
+
+        // If specified, responseType must be empty string or "document"
+        xhr.responseType = 'document';
+
+        // overrideMimeType() can be used to force the response to be parsed as XML
+        xhr.overrideMimeType('text/xml');
+        var line = new ol.geom.LineString();
+        var trackPoints = [];
+        var minTime = 0;
+        var diffTime = 0;
+        xhr.onload = function() {
             if (xhr.readyState === xhr.DONE) {
                 if (xhr.status === 200) {
                     //console.log(xhr.response);
                     var trkpt = xhr.responseXML.getElementsByTagName("trkpt");
-                    var line = new ol.geom.LineString();
+
                     Array.prototype.forEach.call(trkpt, function(item) {
-                    var coord = new Object();
-                    coord.geo = ol.proj.fromLonLat([parseFloat(item.getAttribute("lon")), parseFloat(item.getAttribute("lat"))]);
-                    coord.time = Date.parse(item.getElementsByTagName("time")[0].innerHTML);
-                    trackPoints.push(coord);
+                        var coord = new Object();
+                        coord.geo = ol.proj.fromLonLat([parseFloat(item.getAttribute("lon")), parseFloat(item.getAttribute("lat"))]);
+                        coord.time = Date.parse(item.getElementsByTagName("time")[0].innerHTML);
+                        trackPoints.push(coord);
                         line.appendCoordinate(coord.geo);
                     });
-                    //console.log(trackPoints);
-                    feature = new ol.Feature ();
-                        /*var scr = new ol.proj.Projection("EPSG:4326");
-                    var dest = new ol.proj.Projection('EPSG:3857');
-                    line.transform(scr, dest)*/
+                    feature = new ol.Feature();
                     feature.setGeometry(line);
                     vectorSource.addFeature(feature);
-                    //console.log(feature);
-                    //geladen();
                     minTime = trackPoints[0].time;
-                    diffTime = trackPoints[trackPoints.length-1].time - minTime;
+                    diffTime = trackPoints[trackPoints.length - 1].time - minTime;
                     wheelRotation();
                 }
             }
-         };
-         
-         xhr.send(null);
-         
-         
-         function calcCoord(time) {
+        };
+
+        xhr.send(null);
+
+
+        function calcCoord(time) {
             for (var i = 0; i < trackPoints.length; i++) {
                 if (trackPoints[i].time > time) {
-                    var d2 = trackPoints[i].time - trackPoints[i-1].time;
+                    var d2 = trackPoints[i].time - trackPoints[i - 1].time;
                     var d1 = trackPoints[i].time - time;
-                    var f = d1/d2;
-                    dx = trackPoints[i].geo[0] - trackPoints[i-1].geo[0];
-                    dy = trackPoints[i].geo[1] - trackPoints[i-1].geo[1];
+                    var f = d1 / d2;
+                    dx = trackPoints[i].geo[0] - trackPoints[i - 1].geo[0];
+                    dy = trackPoints[i].geo[1] - trackPoints[i - 1].geo[1];
                     x = trackPoints[i].geo[0] + dx * f;
                     y = trackPoints[i].geo[1] + dy * f;
                     return [x, y];
                 }
             };
-            return [0,0];
-         }
-         
-         
-     
+            return [0, 0];
+        }
+
+
+
+
+        var lineSource = new ol.source.Vector()
+        var lineLayer = new ol.layer.Vector({
+            source: lineSource,
+            style: new ol.style.Style({
+                //              stroke: new ol.style.Stroke({
+                //                   color: 'rgba(50,50,50,0.8)',
+                //                  width: 3
+                //              }),
+                fill: new ol.style.Fill({
+                    color: 'rgba(50,50,50,0.5)'
+                })
+            })
+
+        });
+        var line2 = new ol.Feature();
+        var lineGeo = new ol.geom.Polygon([
+            [
+                [0, 0]
+            ]
+        ]);
+        line2.setGeometry(lineGeo);
+        lineSource.addFeature(line2);
+        map.addLayer(lineLayer);
+
+        function makeLine(coord) {
+            //console.log(coord);
+            lineGeo.setCoordinates(coord);
+            //map.getView().setCenter(coord);
+        }
+
+
         var markerSource = new ol.source.Vector()
         var markerLayer = new ol.layer.Vector({
             source: markerSource,
             style: new ol.style.Style({
-             image: new ol.style.Circle({
-                 radius: 6,
-                 fill: new ol.style.Fill({
-                     color: 'rgba(0,180,0,0.9)'
-                 }),
-                 stroke: new ol.style.Stroke({
-                     color: 'rgba(255,255,255,0.9)',
-                     width: 2
-                 })
-             })
-         })
-         });
-         var marker = new ol.Feature();
-         var markerGeo = new ol.geom.Point([0,0]);
-         marker.setGeometry(markerGeo);
-         markerSource.addFeature(marker);
-         map.addLayer(markerLayer);
-         function makeIcon(coord) {
-            markerGeo.setCoordinates(coord);    
-            //map.getView().setCenter(coord);
-         }
-         
-         
-         
-         
-      </script>
-   </body>
+                image: new ol.style.Circle({
+                    radius: 6,
+                    fill: new ol.style.Fill({
+                        color: 'rgba(0,180,0,0.9)'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: 'rgba(255,255,255,0.9)',
+                        width: 2
+                    })
+                })
+            })
+        });
+        var marker = new ol.Feature();
+        var markerGeo = new ol.geom.Point([0, 0]);
+        marker.setGeometry(markerGeo);
+        markerSource.addFeature(marker);
+        map.addLayer(markerLayer);
+
+        function makeIcon(coord) {
+            markerGeo.setCoordinates(coord);
+        }
+    </script>
+</body>
+
 </html>
